@@ -1,0 +1,303 @@
+:root{
+    --fsize-menu: 15px;
+    --fsize-title: 45px;
+    --fsize-p: 20px;
+    --fsize-legend: 16px;
+
+    --radius: 10px;
+
+    --menu-height: 10vh;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #c5c3c3;
+}
+ul{
+    list-style: none;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+
+/* MENU-TOPO */
+#menu-top{
+    background: black;
+    border-bottom: 1px solid rgba(100, 100, 100, .5);
+    display: block;
+    height: var(--menu-height);
+    position: sticky; top: 0;
+    width: 100%;
+    z-index: 1;
+}
+#menu-top > a{
+    float: left;
+    padding-left: 2vw;
+    font-size: 25px;
+    line-height: var(--menu-height);
+}
+#menu-top > ul{
+    font-size: var(--fsize-menu);
+    float: right;
+    padding-right: 2vw;
+    width: 50%;
+}
+#menu-top > ul > li{
+    display: inline-block;
+    margin-left: auto;
+    width: 20%;
+    float: left;
+}
+#menu-top > ul > li > a{
+    line-height: var(--menu-height);
+}
+
+#menu-top a:hover{
+    color: #dedede;
+}
+#menu-top *{
+    color: white;
+    height: 100%;
+}
+
+
+/* SECTIONS */
+section{
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    padding: 15% 0;
+    width: 70%;
+}
+section > header > *{
+    margin-bottom: 50px;
+}
+section > header > h2{
+    font-size: var(--fsize-title);
+}
+section > header > p{
+    font-size: var(--fsize-p);
+}
+
+section > div{
+    margin-top: 10%;
+    width: 100%;
+}
+section > div > figure{
+    display: inline-block;
+    margin: 0 2%;
+    position: relative;
+    width: 45%;
+}
+section > div > figure > img{
+    border-radius: var(--radius);
+    width: 100%;
+}
+section > div > figure > .legend{
+    background: rgba(0, 0, 0, .7);
+    border-radius: var(--radius);
+    color: white;
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute; top: 0; left: 0;
+    text-align: justify;
+}
+section > div > figure > .legend:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.legend.size{
+    font-size: var(--fsize-legend);
+    height: calc(100% - 40px);
+    line-height: calc(100% + 5px);
+    padding: 20px;
+    width: calc(100% - 40px); 
+}
+
+/* SECTION - HOME */
+#home{
+    background-image: url("../img/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 90vh;
+    width: 100%;
+}
+#home > div{
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+#home > div > h1{
+    font-size: 75px;
+    margin-bottom: 10vh;
+}
+#home > div > p{
+    font-size: 27px;
+    font-weight: 700;
+    padding: 0 2vw;
+}
+
+/* SECTION PARCEIROS */
+#parceiros > div {
+    display: flex;
+    align-items: center;
+}
+#parceiros > div > figure > a > img{
+    width: 80%;
+}
+
+/* SECTION CONTATO*/
+#contato > div > div{
+    display: inline-block;
+    margin: 0 50px;
+}
+#contato > div > div > i{
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+#contato > div > div > a{
+    color: black;
+    font-size: var(--fsize-p);
+}
+
+/* FOOTER */
+footer{
+    background-color: black;
+    color: white;
+    display: block;
+    height: 30vh;
+}
+footer > *{
+    padding-top: 8vh;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1100px){
+    #menu-top > ul{
+        width: 60%;
+    }
+    #parceiros > div > figure > a > img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    #menu-top > ul{
+        width: 65%;
+    }
+
+    section > div > figure {
+        margin: 2% auto;
+        width: 80%;
+    }
+    
+    #contato > div > div {
+        display: block;
+        margin: 5% auto;
+    }
+}
+
+@media screen and (max-width: 750px){
+    #menu-top > ul{
+        width: 70%;
+    }
+
+    #parceiros > div{
+        flex-direction: column;
+    }
+    #parceiros > div > figure:last-child{
+        margin-top: 10%;
+    }
+    #parceiros > div > figure > a > img{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    :root{
+        --fsize-title: 40px;
+        --fsize-p: 18px;
+    }
+
+    #menu-top{
+        height: 15vh;
+    }
+    #menu-top > *{
+        height: 50%;
+    }
+    #menu-top > a{
+        padding-left: 0;
+        width: 100%;
+    }
+    #menu-top > ul{
+        width: 100%;
+        padding-right: 0;
+    }
+    #menu-top > a, 
+    #menu-top > ul > li > a{
+        line-height: 7.5vh;
+    }
+
+    #home{
+        height: 85vh;
+    }
+
+    section{
+        padding-top: 20vh;
+        padding-bottom: 20vh;
+        width: 90%;
+    }
+    section > div > figure {
+        display: block;
+        width: 70%;
+    }
+    section > div > figure > img,
+    section > div > figure > .legend{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        opacity: 1;
+        margin: 0;
+    }
+    section > div > figure > img{
+        border-radius: var(--radius) var(--radius) 0 0;
+    }
+    section > div > figure > .legend {
+        border-radius:  0 0 var(--radius) var(--radius);
+    }
+}
+
+@media screen and (max-width: 550px){
+    section > div > figure{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 470px){
+    :root{
+        --fsize-menu: 12px;
+        --fsize-title: 35px;
+        --fsize-p: 18px;
+        --fsize-legend: 14px;
+    }
+
+    section > header > *{
+        margin-bottom: 35px;
+    }
+    section > div > figure {
+        width: 90%;
+    }
+}
