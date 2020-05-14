@@ -76,6 +76,7 @@ section{
     padding: 15% 0;
     width: 70%;
 }
+
 section > header > *{
     margin-bottom: 50px;
 }
@@ -117,7 +118,7 @@ section > div > figure > .legend:hover{
 
 .legend.size{
     font-size: var(--fsize-legend);
-    height: calc(100% - 40px);
+    height: calc(100% - 44px);
     line-height: calc(100% + 5px);
     padding: 20px;
     width: calc(100% - 40px); 
@@ -189,12 +190,26 @@ footer > *{
     #menu-top > ul{
         width: 60%;
     }
+
     #parceiros > div > figure > a > img{
         width: 100%;
     }
 }
+@media screen and (max-width: 950px){
+    :root{
+        --fsize-legend: 15px;
+    }
+
+    .legend.size{
+        line-height: calc(100% + 3px);
+    }
+}
 
 @media screen and (max-width: 850px){
+    :root{
+        --fsize-legend: 17px;
+    }
+
     #menu-top > ul{
         width: 65%;
     }
@@ -204,6 +219,10 @@ footer > *{
         width: 80%;
     }
     
+    .legend.size{
+        line-height: calc(100% + 5px);
+    }
+
     #contato > div > div {
         display: block;
         margin: 5% auto;
